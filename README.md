@@ -1,5 +1,7 @@
 # cybersecurity_homework7
 Exploitation of vulnerabilities in web applications
+
+
 1)За допомогою sqlmap проексплуатуйте ін'єкціі в bWAPP у задачах "SQL Injection- Blind -Time-based", "SQL Injection- Blind-Boolean-based". Прикріпіть скріншоти на яких видно з якими параметрами ви запускали sqlmap та список існуючих таблиць в базі. 
 
 Скріношт 
